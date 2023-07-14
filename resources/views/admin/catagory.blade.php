@@ -22,6 +22,10 @@
         .input_color {
             color: #000;
         }
+
+        .table {
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -54,7 +58,24 @@
                             <input type="submit" class="btn btn-primary" value="Add catagory">
                         </form>
                     </div>
-
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Catagory Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($data as $data)
+                                <tr>
+                                    <td scope="row">{{ $data->catagory_name }}</td>
+                                    <td><a onclick='return confirm("Are you sure to delete {{ $data->catagory_name }} ?")'
+                                            class="btn btn-danger"
+                                            href="{{ url('delete_catagory', $data->id) }}">Delete</a></td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <!-- main-panel ends -->

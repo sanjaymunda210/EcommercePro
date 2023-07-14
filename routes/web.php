@@ -30,3 +30,4 @@ Route::middleware([
 Route::get('/redirect', [HomeController::class, 'redirect']);
 Route::get('/view_catagory', [adminController::class, 'view_catagory']);
 Route::post('/add_catagory', [adminController::class, 'add_catagory']);
+Route::get('/delete_catagory/{id}', [adminController::class, 'delete_catagory']);
